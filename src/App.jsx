@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import BmiImage from './assets/bmi.png'
 
 function App() {
   const [age, setAge] = useState(0);
@@ -10,7 +11,6 @@ function App() {
   const [currentClass, setCurrentClass] = useState('')
 
   const calculateBmi = () => {
-    console.log(metricType)
     if(metricType === 'usc') {
       setCurrentBmi(
         703 * (weight / (height**2))
@@ -23,7 +23,6 @@ function App() {
   }
 
   const calculateChildClass = () => {
-    console.log('calculate')
     if(age == 2) {
       if(currentBmi < 14.73732) {
          setCurrentClass('Underweight')
@@ -329,6 +328,29 @@ function App() {
               </div>
         </div>
          <p className='text-gray-600 mt-2'>Note: BMI for ages below 20 is less accurate</p>
+      </div>
+      
+      <div className='my-12 w-full p-4 md:w-1/2 space-y-6'>
+         <div>
+            <h1 className='text-2xl font-bold text-blue-500 '>What is BMI?</h1>
+            <p className=''>
+               BMI, or Body Mass Index, is a numerical value derived from a person's weight and height. It is a simple and widely used measure to assess whether an individual has a healthy body weight relative to their height. The formula for BMI is weight in kilograms divided by the square of height in meters (BMI = kg/m²). 
+               <br />
+               <br />
+               BMI is often categorized into ranges such as underweight, normal weight, overweight, and obese, providing a general indication of a person's health status. However, it's important to note that BMI does not directly measure body fat percentage or distribution, nor does it consider factors such as muscle mass, bone density, or overall body composition. Therefore, while it can be a useful screening tool, it may not always accurately reflect an individual's level of health or risk for certain diseases. Consulting with a healthcare professional is recommended for a comprehensive assessment of health and weight status.
+            </p>
+            <img src={BmiImage} alt="" />
+         </div>
+         <div>
+            <h1 className='text-2xl font-bold text-blue-500 '>How to calculate BMI?</h1>
+            
+            <p>
+               The BMI is calculated by dividing an adult's weight in kilograms by their height in metres squared. For example, if you weigh 70kg (around 11 stone) and are 1.73m (around 5 foot 8 inches) tall, you work out your BMI by: squaring your height in metres: 1.73 x 1.73 = 2.99.     
+            </p>
+         </div>
+      </div>
+      <div className='py-5 flex items-center'>
+         <h1 className='text-xl font-semibold'>Made by <a href="https://malsthedev.vercel.app" className='text-blue-400 underline'>Mals</a></h1>
       </div>
     </div>
   )
