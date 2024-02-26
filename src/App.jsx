@@ -313,7 +313,7 @@ function App() {
               <h1>0</h1>
               <h1>40</h1>
             </div>
-              <div className='h-12 rounded-t-xl bg-gray-400 w-96'>
+              <div className='h-12 rounded-t-xl bg-gray-400 w-full'>
                 <div className='transition-all' style={{
                   height: '100%',
                   width: `${currentBmi.toFixed(2) * 2.5}%`,
