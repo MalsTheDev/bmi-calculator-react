@@ -230,22 +230,25 @@ function App() {
     } else if(currentBmi <= 35) {
       setCurrentClass('Obesse Class I')
     } else if(currentBmi <= 40) {
-      setCurrentClass('Obesse Class II')
+      setCurrentClass('Obesse Class II') 
     } else {
       setCurrentClass('Obesse III')
     }
   }
 
   useEffect(() => {
+   if(weight && height)
     calculateBmi();
   }, [weight, height, metricType])
 
   useEffect(() => {
-    if(age > 20) {
-      calculateClass();
-    } else {
-      calculateChildClass();
-    }
+   if(weight && height) {
+      if(age > 20) {
+        calculateClass();
+      } else {
+        calculateChildClass();
+      }
+   }
   }, [currentBmi, age])
 
   return (
@@ -259,7 +262,7 @@ function App() {
         <div className='flex-col flex space-y-5'>
           <div className="group relative w-72 md:w-80 lg:w-96">
             <label htmlFor="1" className="block w-full pb-1 text-sm font-medium text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-100">Age</label>
-            <input id="1" type="text" className="peer h-10 w-full rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:ring-2 focus:ring-blue-100" onChange={(e) => setAge(e.target.value)} />
+            <input id="1" type="number" className="peer h-10 w-full rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:ring-2 focus:ring-blue-100" onChange={(e) => setAge(e.target.value)} />
           </div>
           {/* Gender input */}
           <form className='flex items-center text-white'>
