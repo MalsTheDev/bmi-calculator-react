@@ -261,8 +261,8 @@ function App() {
         </div>
         <div className='flex-col flex space-y-5'>
           <div className="group relative w-72 md:w-80 lg:w-96">
-            <label htmlFor="1" className="block w-full pb-1 text-sm font-medium text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-100">Age</label>
-            <input id="1" type="number" className="peer h-10 w-full rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:ring-2 focus:ring-blue-100" onChange={(e) => setAge(e.target.value)} />
+            <label htmlFor="1" className={`block w-full pb-1 text-sm font-medium text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-100 ${age ? 'text-blue-100' : ''}`}>Age</label>
+            <input id="1" type="number" className={`peer h-10 w-full rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:ring-2 focus:ring-blue-100 ${age ? 'ring-2 ring-blue-100 bg-white' : ''}`} onChange={(e) => setAge(e.target.value)} />
           </div>
           {/* Gender input */}
           <form className='flex items-center text-white'>
@@ -282,24 +282,24 @@ function App() {
           </form>
           {/* Height input */}
           <div className="group">
-            <label htmlFor="4" className="inline-block my-1 w-full text-sm font-medium text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-100">Height</label>
+            <label htmlFor="4" className={`inline-block my-1 w-full text-sm font-medium text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-100 ${height ? 'text-blue-100' : ''}`}>Height</label>
             <div className="relative flex items-center">
-              <input id="4" type="number" className="peer relative h-10 w-full rounded-md bg-gray-50 pl-10 pr-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:ring-2 focus:ring-blue-100 focus:drop-shadow-lg" onChange={(e) => setHeight(e.target.value)} />
+              <input id="4" type="number" className={`peer relative h-10 w-full rounded-md bg-gray-50 pl-10 pr-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:ring-2 focus:ring-blue-100 focus:drop-shadow-lg ${height ? 'ring-2 ring-blue-100 bg-white' : ''}`} onChange={(e) => setHeight(e.target.value)} />
               { metricType === 'usc' ?
-                <span className="material-symbols-outlined absolute left-2 transition-all duration-200 ease-in-out group-focus-within:text-blue-400">in.</span>
+                <span className={`material-symbols-outlined absolute left-2 transition-all duration-200 ease-in-out group-focus-within:text-blue-400 ${height ? 'text-blue-400' : ''}`}>in.</span>
                 :
-                <span className="material-symbols-outlined absolute left-2 transition-all duration-200 ease-in-out group-focus-within:text-blue-400">cm</span>
+                <span className={`material-symbols-outlined absolute left-2 transition-all duration-200 ease-in-out group-focus-within:text-blue-400 ${height ? 'text-blue-400' : ''}`}>cm</span>
               }
             </div>
           </div>
           <div className="group">
-            <label htmlFor="4" className="inline-block my-1 w-full text-sm font-medium text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-100">Weight</label>
+            <label htmlFor="4" className={`inline-block my-1 w-full text-sm font-medium text-white transition-all duration-200 ease-in-out group-focus-within:text-blue-100 ${weight ? 'text-blue-100' : ''}`}>Weight</label>
             <div className="relative flex items-center">
-              <input id="4" type="number" className="peer relative h-10 w-full rounded-md bg-gray-50 pl-10 pr-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:ring-2 focus:ring-blue-100 focus:drop-shadow-lg" onChange={(e) => setWeight(e.target.value)} />
+              <input id="4" type="number" className={`peer relative h-10 w-full rounded-md bg-gray-50 pl-10 pr-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out focus:bg-white focus:ring-2 focus:ring-blue-100 focus:drop-shadow-lg ${weight ? 'ring-2 ring-blue-100 bg-white' : ''}`} onChange={(e) => setWeight(e.target.value)} />
               { metricType === 'usc' ?
-                <span className="material-symbols-outlined absolute left-2 transition-all duration-200 ease-in-out group-focus-within:text-blue-400">lbs</span>
+                <span className={`material-symbols-outlined absolute left-2 transition-all duration-200 ease-in-out group-focus-within:text-blue-400 ${weight ? 'text-blue-400' : ''}`}>lbs</span>
                 : 
-                <span className="material-symbols-outlined absolute left-2 transition-all duration-200 ease-in-out group-focus-within:text-blue-400">kg</span>
+                <span className={`material-symbols-outlined absolute left-2 transition-all duration-200 ease-in-out group-focus-within:text-blue-400 ${weight ? 'text-blue-400' : ''}`}>kg</span>
               }
             </div>
           </div>
